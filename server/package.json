@@ -1,0 +1,19 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "this is a graphql auth with jwt and mysql",
+  "main": "src/main.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gracebir/react-auth-jwt.git"
+  },
+  "author": "GraceTech",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gracebir/react-auth-jwt/issues"
+  },
+  "homepage": "https://github.com/gracebir/react-auth-jwt#readme"
+}
