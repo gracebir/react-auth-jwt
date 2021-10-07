@@ -1,10 +1,11 @@
 import { Resolver, Query, Mutation, Arg,Ctx, Field, ObjectType, UseMiddleware } from 'type-graphql';
 import { hash, compare } from 'bcryptjs'
-import { User } from './entity/User';
+import { User } from '../entity/User';
 
-import { MyContext } from './interfaces/MyContext';
-import { createRefreshToken, createAccessToken} from './auth';
-import { isAuth } from './isAuth';
+import { MyContext } from '../interfaces/MyContext';
+import { createRefreshToken, createAccessToken} from '../auth/auth';
+import { isAuth } from '../auth/isAuth';
+import { sendRefreshToken } from '../auth/sendRefreshToken';
 
 
 @ObjectType()
@@ -85,9 +86,7 @@ export class UserResolver{
         }
         
         //login successful
-        res.cookie('jid', createRefreshToken(user),{
-            httpOnly: true
-        })
+        sendRefreshToken(res, createRefreshToken(user));
 
         return {
             accessToken:createAccessToken(user)

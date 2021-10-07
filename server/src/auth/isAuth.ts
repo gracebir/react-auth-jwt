@@ -1,5 +1,5 @@
 import { MiddlewareFn } from 'type-graphql'
-import { MyContext } from './interfaces/MyContext';
+import { MyContext } from '../interfaces/MyContext';
 import { verify } from 'jsonwebtoken';
 
 
